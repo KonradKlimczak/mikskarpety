@@ -1,8 +1,22 @@
-body {
-    margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, "Fira Sans", "Droid Sans",
-        "Helvetica Neue", sans-serif;
+.main {
+    padding: 0 400px;
+    .photo-grid {
+        width: 600px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 1rem;
+        justify-items: center;
+        align-items: center;
+        .big-grid {
+            height: 500px;
+            grid-row-start: 1;
+            grid-row-end: 3;
+            grid-column-start: 1;
+            grid-column-end: 3;
+        }
+        img {
+            border: 2px solid $primary-color;
+            height: 250px;
+        }
+    }
 }
-
-@import "variables";
-@import "navbar";
