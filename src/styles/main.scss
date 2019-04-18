@@ -1,14 +1,17 @@
+$photo-height-px: 200px;
+$big-photo-height-px: $photo-height-px * 2;
+
 .main {
     padding: 0 400px;
     .photo-grid {
-        width: 600px;
+        width: 500px;
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         grid-gap: 1rem;
         justify-items: center;
         align-items: center;
         .big-grid {
-            height: 500px;
+            height: $big-photo-height-px;
             grid-row-start: 1;
             grid-row-end: 3;
             grid-column-start: 1;
@@ -16,7 +19,7 @@
         }
         img {
             border: 2px solid $primary-color;
-            height: 250px;
+            height: $photo-height-px;
         }
     }
 }
