@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<figure>
+  <img
+    className="big-grid"
+    src="images/pictures/w01.jpg"
+  />
+  <figcaption>
+    TEST
+  </figcaption>
+</figure>
+`;
