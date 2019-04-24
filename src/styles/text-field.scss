@@ -1,3 +1,24 @@
 .text-field {
-    
+  display: inline-flex;
+  border-radius: 3px;
+  padding: 5px;
+  transition: box-shadow 200ms;
+  .text-field--icon {
+    display: flex;
+    margin-right: 5px;
+  }
+
+  input {
+    padding: 0;
+    border: none;
+  }
+  input:focus {
+    outline: none;
+  }
+}
+.text-field:hover {
+  box-shadow: 0 0 5px 0 rgba($primary-color, 0.5);
+}
+.text-field:focus-within {
+  box-shadow: 0 0 5px 2px $primary-color;
 }

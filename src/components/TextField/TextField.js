@@ -4,10 +4,10 @@ class TextField extends Component {
     render() {
         return (
             <div className={classnames("text-field")}>
-                <div>
+                <div className={classnames("text-field--icon")}>
                     <img src={this.props.icon} />
                 </div>
-                <input />
+                <input placeholder={this.props.placeholder} />
             </div>
         );
     }
