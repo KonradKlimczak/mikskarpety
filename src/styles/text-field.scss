@@ -1,11 +1,11 @@
 .text-field {
   display: inline-flex;
-  border-radius: 3px;
-  padding: 5px;
+  border-radius: 5px;
+  padding: 10px;
   transition: box-shadow 200ms;
   .text-field--icon {
     display: flex;
-    margin-right: 5px;
+    margin-right: 10px;
   }
 
   input {
