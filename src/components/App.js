@@ -1,17 +1,15 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from "react";
 
-import TextField from './TextField/TextField';
-import SearchIcon from '../images/icons/Search.svg'
+import Navbar from "./Navbar/Navbar";
 
 class App extends Component {
-    render() {
-        return (
-            <div style={{padding: 100}}>
-                <h1> READSADAD</h1>
-                <TextField icon={SearchIcon} placeholder="Find love" />
-            </div>
-        );
-    }
+  render() {
+    return (
+      <Fragment>
+        <Navbar />
+      </Fragment>
+    );
+  }
 }
 
 export default App;
