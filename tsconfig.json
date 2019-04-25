@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "sourceMap": true,
+    "allowSyntheticDefaultImports": true,
+    "jsx": "preserve",
+    "importHelpers": true,
+    "strict": true
+  }
+}

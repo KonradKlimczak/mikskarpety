@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 import Logo from "../../images/mik-logo.svg";
 import SearchIcon from "../../images/icons/Search.svg";
-import TextField from "../TextField/TextField";
+import TextField from "../TextField/TextField.tsx";
 
 class Navbar extends Component {
   render() {
