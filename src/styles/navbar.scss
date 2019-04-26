@@ -16,6 +16,19 @@
       align-items: center;
       justify-content: center;
     }
+    .navbar-first-left {
+      .navbar-phone-number a {
+        display: flex;
+        align-items: center;
+        font-size: 1rem;
+        text-decoration: none;
+        color: inherit;
+        img {
+          padding: 5px;
+          transform: rotate(90deg);
+        }
+      }
+    }
   }
 
   ul {

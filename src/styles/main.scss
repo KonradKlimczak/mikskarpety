@@ -2,24 +2,24 @@ $photo-height-px: 200px;
 $big-photo-height-px: $photo-height-px * 2;
 
 .main {
-    padding: 0 400px;
-    .photo-grid {
-        width: 500px;
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-gap: 1rem;
-        justify-items: center;
-        align-items: center;
-        .big-grid {
-            height: $big-photo-height-px;
-            grid-row-start: 1;
-            grid-row-end: 3;
-            grid-column-start: 1;
-            grid-column-end: 3;
-        }
-        img {
-            border: 2px solid $primary-color;
-            height: $photo-height-px;
-        }
+  padding: 0 400px;
+  .photo-grid {
+    width: 500px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 1rem;
+    justify-items: center;
+    align-items: center;
+    .big-grid {
+      height: $big-photo-height-px;
+      grid-row-start: 1;
+      grid-row-end: 3;
+      grid-column-start: 1;
+      grid-column-end: 3;
     }
+    img {
+      box-shadow: 0 0 5px 0 rgba($primary-color, 0.5);
+      height: $photo-height-px;
+    }
+  }
 }
