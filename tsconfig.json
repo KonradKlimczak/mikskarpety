@@ -3,8 +3,9 @@
     "allowJs": true,
     "sourceMap": true,
     "allowSyntheticDefaultImports": true,
-    "jsx": "preserve",
     "importHelpers": true,
+    "moduleResolution": "node",
+    "jsx": "preserve",
     "strict": true
   }
 }

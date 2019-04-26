@@ -1,11 +1,12 @@
-import React, { Component } from "react";
+import * as React from "react";
 
-import Logo from "../../images/mik-logo.svg";
-import SearchIcon from "../../images/icons/Search.svg";
-import PhoneIcon from "../../images/icons/Phone.svg";
-import TextField from "../TextField/TextField.tsx";
+const Logo = require("../../images/mik-logo.svg");
+const SearchIcon = require("../../images/icons/Search.svg");
+const PhoneIcon = require("../../images/icons/Phone.svg");
+const EmailIcon = require("../../images/icons/Email.svg");
+import TextField from "../TextField/TextField";
 
-class Navbar extends Component {
+class Navbar extends React.Component {
   render() {
     return (
       <nav className="navbar">
@@ -15,6 +16,12 @@ class Navbar extends Component {
               <a href="tel://+48-605-585-944">
                 <img src={PhoneIcon} />
                 (+48) 605-585-944
+              </a>
+            </div>
+            <div className="navbar-email">
+              <a>
+                <img src={EmailIcon} />
+                mik.skarpety@gmail.com
               </a>
             </div>
           </div>
