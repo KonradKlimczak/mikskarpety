@@ -7,5 +7,6 @@
     "moduleResolution": "node",
     "jsx": "preserve",
     "strict": true
-  }
+  },
+  "exclude": ["test"]
 }

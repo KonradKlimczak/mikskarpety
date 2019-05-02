@@ -1,6 +1,11 @@
-import React, { Component } from "react";
+import * as  React from "react";
 
-class PhotoItem extends Component {
+interface PhotoItemProps {
+    src: string;
+    caption?: string;
+}
+
+class PhotoItem extends React.Component<PhotoItemProps> {
     render() {
         return (
             <figure>

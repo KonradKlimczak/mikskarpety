@@ -1,5 +1,5 @@
-import classnames from "classnames";
-import * as React from "react";
+import classnames from 'classnames';
+import * as React from 'react';
 import { getSeverityClassName, Severity } from '../Severity';
 
 interface NotificationProps {
@@ -9,9 +9,7 @@ interface NotificationProps {
 class Notification extends React.PureComponent<NotificationProps> {
   render() {
     return (
-      <div className={classnames("notification", getSeverityClassName(this.props.severity))}>
-        {this.props.children}
-      </div>
+      <div className={classnames('notification', getSeverityClassName(this.props.severity))}>{this.props.children}</div>
     );
   }
 }
