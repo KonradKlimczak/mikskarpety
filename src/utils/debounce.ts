@@ -1,11 +1,18 @@
-function debounce(func: Function, wait: number) {
-  let timeout: NodeJS.Timeout | null;
-  return function(...args: any) {
-    var later = () => {
-      timeout = null;
-      func.apply(null, args);
+export function debounce(func: Function, waitMilliseconds = 50) {
+  let timeoutId: NodeJS.Timeout | null;
+
+  return function(this: any, ...args: any[]) {
+    const context = this;
+
+    const doLater = function() {
+      timeoutId = null;
+      func.apply(context, args);
     };
-    timeout && clearTimeout(timeout);
-    timeout = setTimeout(later, wait);
+
+    if (timeoutId !== null) {
+      clearTimeout(timeoutId);
+    }
+
+    timeoutId = setTimeout(doLater, waitMilliseconds);
   };
 }

@@ -21,3 +21,25 @@ it('TextField onChange handler', () => {
   expect(changeCallback).toBeCalledTimes(1);
   expect(changeCallback).toBeCalledWith(value);
 });
+
+it('TextField debounce onChange handler', () => {
+  jest.useFakeTimers();
+  const changeCallback = jest.fn();
+  const textFieldRenderer = render(
+    <TextField icon='TestIcon' placeholder='Find love' onChange={changeCallback} debounce={200} />
+  );
+  const testInput = textFieldRenderer.getByTestId('input');
+  expect(testInput).toBeTruthy();
+  const value = 'TEST';
+  fireEvent.change(testInput, { target: { value } });
+
+  expect(changeCallback).not.toBeCalled();
+
+  jest.runTimersToTime(50);
+  expect(changeCallback).not.toBeCalled();
+
+  jest.runTimersToTime(250);
+  expect(changeCallback).toBeCalled();
+  expect(changeCallback).toBeCalledTimes(1);
+  expect(changeCallback).toBeCalledWith(value);
+});
