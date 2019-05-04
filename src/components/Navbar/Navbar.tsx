@@ -6,7 +6,7 @@ const PhoneIcon = require('../../images/icons/Phone.svg');
 const EmailIcon = require('../../images/icons/Email.svg');
 import TextField from '../TextField/TextField';
 
-class Navbar extends React.Component {
+class Navbar extends React.PureComponent {
   render() {
     return (
       <nav className='navbar'>

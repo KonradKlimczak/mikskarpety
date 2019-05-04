@@ -1,25 +1,22 @@
 import { UserAction } from '../actions';
 
 export interface UserState {
-    analitics: {
-        cookies: false;
-    } | {
-        cookies: true;
-        searchHistory: string[]
-    }
+  analitics: boolean;
+  search: string;
 }
 
 const initialState: UserState = {
-    analitics: {
-        cookies: false
-    }
-}
+  analitics: false,
+  search: ''
+};
 
 export function user(state = initialState, action: UserAction): UserState {
-    switch (action.type) {
-        case "ACCEPT_COOKIES":
-            return { ...state, analitics: { cookies: true, searchHistory: [] } }
-        default:
-            return state
-    }
+  switch (action.type) {
+    case 'ACCEPT_COOKIES':
+      return { ...state, analitics: true };
+    case 'SEARCH_ITEM':
+      return { ...state, search: action.value };
+    default:
+      return state;
+  }
 }
