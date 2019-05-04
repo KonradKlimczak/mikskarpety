@@ -5,6 +5,7 @@ import { Severity } from './Severity';
 import { connect } from 'react-redux';
 import { acceptCookies } from '../actions';
 import { AppState } from '../reducers';
+import { Route } from 'react-router-dom';
 
 interface AppProps {
   cookies: boolean;
@@ -16,6 +17,13 @@ class App extends React.Component<AppProps> {
     return (
       <React.Fragment>
         <Navbar />
+        <Route
+          path='/'
+          exact
+          component={() => {
+            return <div>test</div>;
+          }}
+        />
         {!this.props.cookies && (
           <Notification severity={Severity.Info}>
             Drogi Użytkowniku, Niniejsza strona korzysta z plików cookies dla celów statystycznych i marketingowych.
