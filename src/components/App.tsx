@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 import { acceptCookies } from '../actions';
 import { AppState } from '../reducers';
 import { Route } from 'react-router-dom';
+import Home from './Home/Home';
 
 interface AppProps {
   cookies: boolean;
@@ -17,13 +18,9 @@ class App extends React.Component<AppProps> {
     return (
       <React.Fragment>
         <Navbar />
-        <Route
-          path='/'
-          exact
-          component={() => {
-            return <div>test</div>;
-          }}
-        />
+        <main className='main'>
+          <Route path='/' exact component={Home} />
+        </main>
         {!this.props.cookies && (
           <Notification severity={Severity.Info}>
             Drogi Użytkowniku, Niniejsza strona korzysta z plików cookies dla celów statystycznych i marketingowych.
@@ -39,7 +36,7 @@ class App extends React.Component<AppProps> {
 export default connect(
   (state: AppState) => {
     return {
-      cookies: state.user.analitics.cookies
+      cookies: state.user.analitics
     };
   },
   dispatch => ({
