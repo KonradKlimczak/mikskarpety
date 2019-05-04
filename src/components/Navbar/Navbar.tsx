@@ -28,7 +28,7 @@ class Navbar extends React.Component {
           <img src={Logo} alt="MIK logo" />
 
           <div className="navbar-first-right">
-            <TextField icon={SearchIcon} placeholder="Find love" />
+            <TextField icon={SearchIcon} placeholder="Find love" onChange={console.log} />
           </div>
         </div>
 

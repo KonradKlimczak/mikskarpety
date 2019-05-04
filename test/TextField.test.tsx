@@ -5,7 +5,7 @@ import TextField from "../src/components/TextField/TextField";
 
 it("TextField renders correctly", () => {
   const tree = renderer
-    .create(<TextField icon="TestIcon" placeholder="Find love" />)
+    .create(<TextField icon="TestIcon" placeholder="Find love" onChange={console.log} />)
     .toJSON();
   expect(tree).toMatchSnapshot();
 });

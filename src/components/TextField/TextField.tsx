@@ -1,22 +1,30 @@
-import classnames from "classnames";
-import * as React from "react";
+import classnames from 'classnames';
+import * as React from 'react';
 
 interface TextFieldProps {
   icon?: string;
   placeholder: string;
+  debounce?: number;
+  onChange: (value: string) => void;
 }
 
-class TextField extends React.PureComponent<TextFieldProps> {
-  render() {
-    return (
-      <div className={classnames("text-field")}>
-        <div className={classnames("text-field--icon")}>
-          <img src={this.props.icon} />
-        </div>
-        <input placeholder={this.props.placeholder} />
+const TextField: React.SFC<TextFieldProps> = props => {
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    if (props.debounce) {
+      debounce(() => props.onChange(event.target.value), props.debounce);
+    } else {
+      props.onChange(event.target.value);
+    }
+  };
+
+  return (
+    <div className={classnames('text-field')}>
+      <div className={classnames('text-field--icon')}>
+        <img src={props.icon} />
       </div>
-    );
-  }
-}
+      <input placeholder={props.placeholder} onChange={handleChange} />
+    </div>
+  );
+};
 
 export default TextField;
