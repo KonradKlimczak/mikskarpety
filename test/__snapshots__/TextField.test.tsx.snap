@@ -12,6 +12,8 @@ exports[`TextField renders correctly 1`] = `
     />
   </div>
   <input
+    data-testid="input"
+    onChange={[Function]}
     placeholder="Find love"
   />
 </div>

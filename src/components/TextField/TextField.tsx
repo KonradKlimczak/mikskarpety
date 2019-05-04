@@ -22,7 +22,7 @@ const TextField: React.SFC<TextFieldProps> = props => {
       <div className={classnames('text-field--icon')}>
         <img src={props.icon} />
       </div>
-      <input placeholder={props.placeholder} onChange={handleChange} />
+      <input data-testid="input" placeholder={props.placeholder} onChange={handleChange} />
     </div>
   );
 };
