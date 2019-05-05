@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Navbar from './Navbar/Navbar';
 import Notification from './Notification/Notification';
-import { Severity } from './Severity';
+import { Severity } from '../utils/Severity';
 import { connect } from 'react-redux';
 import { acceptCookies } from '../actions';
 import { AppState } from '../reducers';

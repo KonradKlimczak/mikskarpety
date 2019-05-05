@@ -1,4 +1,4 @@
-import { assertNever } from '../utils/assertNever';
+import { assertNever } from './assertNever';
 
 export enum Severity {
   Info = "Info",

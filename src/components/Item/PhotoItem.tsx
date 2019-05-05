@@ -1,19 +1,26 @@
-import * as  React from "react";
+import classnames from 'classnames';
+import * as React from 'react';
+
+import { getSizeClassName, Size } from '../../utils/Size';
+
 
 interface PhotoItemProps {
-    src: string;
-    caption?: string;
+  src: string;
+  caption?: string;
+  size: Size;
 }
 
-class PhotoItem extends React.Component<PhotoItemProps> {
-    render() {
-        return (
-            <figure>
-                <img className="big-grid" src={this.props.src} />
-                {this.props.caption && <figcaption>{this.props.caption}</figcaption>}
-            </figure>
-        );
-    }
-}
+const PhotoItem: React.SFC<PhotoItemProps> = props => {
+  return (
+    <figure className={classnames('photoItem', getSizeClassName(props.size))}>
+      <img src={props.src} />
+      {props.caption && <figcaption>{props.caption}</figcaption>}
+    </figure>
+  );
+};
+
+PhotoItem.defaultProps = {
+  size: Size.Medium
+};
 
 export default PhotoItem;

@@ -1,6 +1,6 @@
 import classnames from 'classnames';
 import * as React from 'react';
-import { getSeverityClassName, Severity } from '../Severity';
+import { getSeverityClassName, Severity } from '../../utils/Severity';
 
 interface NotificationProps {
   severity: Severity;

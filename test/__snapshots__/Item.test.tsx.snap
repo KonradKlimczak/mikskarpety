@@ -1,9 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`PhotoItem renders correctly 1`] = `
-<figure>
+<figure
+  className="photoItem"
+>
   <img
-    className="big-grid"
     src="images/pictures/w01.jpg"
   />
   <figcaption>

@@ -1,4 +1,8 @@
 import * as React from 'react';
+import PhotoItem from '../Item/PhotoItem';
+import { Size } from '../../utils/Size';
+
+const m08 = require('../../images/pictures/m08.jpg');
 
 interface HomeProps {}
 
@@ -6,7 +10,7 @@ const Home: React.SFC<HomeProps> = () => {
   return (
     <React.Fragment>
       <div className='photo-grid'>
-        <img className='big-grid' src='images/pictures/m08.jpg' />
+        <PhotoItem src={m08} size={Size.Big} caption='Swieta swieta' />
         <img src='images/pictures/w01.jpg' />
         <img src='images/pictures/bs01.jpg' />
         <img src='images/pictures/a03.jpg' />
