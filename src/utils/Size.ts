@@ -6,7 +6,7 @@ export enum Size {
   Big = 'Big'
 }
 
-export function getSizeClassName(size: Size) {
+export function getSizeClassName(size: Size = Size.Medium) {
   switch (size) {
     case Size.Small:
       return 'size--small';

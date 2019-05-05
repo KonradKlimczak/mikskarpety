@@ -7,7 +7,7 @@ import { getSizeClassName, Size } from '../../utils/Size';
 interface PhotoItemProps {
   src: string;
   caption?: string;
-  size: Size;
+  size?: Size;
 }
 
 const PhotoItem: React.SFC<PhotoItemProps> = props => {
@@ -17,10 +17,6 @@ const PhotoItem: React.SFC<PhotoItemProps> = props => {
       {props.caption && <figcaption>{props.caption}</figcaption>}
     </figure>
   );
-};
-
-PhotoItem.defaultProps = {
-  size: Size.Medium
 };
 
 export default PhotoItem;
