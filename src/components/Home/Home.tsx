@@ -1,6 +1,7 @@
 import * as React from 'react';
-import PhotoItem from '../Item/PhotoItem';
+
 import { Size } from '../../utils/Size';
+import PhotoItem from '../Item/PhotoItem';
 
 const m08 = require('../../images/pictures/m08.jpg');
 
