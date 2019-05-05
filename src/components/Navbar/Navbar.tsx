@@ -5,6 +5,7 @@ const SearchIcon = require('../../images/icons/Search.svg');
 const PhoneIcon = require('../../images/icons/Phone.svg');
 const EmailIcon = require('../../images/icons/Email.svg');
 import TextField from '../TextField/TextField';
+import { Link } from 'react-router-dom';
 
 class Navbar extends React.PureComponent {
   render() {
@@ -25,7 +26,10 @@ class Navbar extends React.PureComponent {
               </a>
             </div>
           </div>
-          <img src={Logo} alt='MIK logo' />
+
+          <Link to='/'>
+            <img src={Logo} alt='MIK logo' />
+          </Link>
 
           <div className='navbar-first-right'>
             <TextField
@@ -41,16 +45,16 @@ class Navbar extends React.PureComponent {
 
         <ul>
           <li>
-            <a href='default.asp'>Mężczyzna</a>
+            <Link to='/socks/men'>Mężczyzna</Link>
           </li>
           <li>
-            <a href='news.asp'>Kobieta</a>
+            <Link to='/socks/women'>Kobieta</Link>
           </li>
           <li>
-            <a href='about.asp'>Nowości</a>
+            <Link to='/socks/new'>Nowości</Link>
           </li>
           <li>
-            <a href='contact.asp'>Dzieci</a>
+            <Link to='/socks/kids'>Dzieci</Link>
           </li>
         </ul>
       </nav>

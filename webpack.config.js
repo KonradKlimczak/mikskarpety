@@ -1,51 +1,60 @@
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
-  devtool: "source-map",
+  devtool: 'source-map',
+  output: {
+    path: path.resolve(__dirname, 'dist'),
+    publicPath: '/'
+  },
+  devServer: {
+    historyApiFallback: true,
+    contentBase: path.resolve(__dirname, 'dist')
+  },
   resolve: {
-    extensions: [".ts", ".tsx", ".js"]
+    extensions: ['.ts', '.tsx', '.js']
   },
   module: {
     rules: [
       {
         test: /\.tsx?$/,
-        use: [{ loader: "babel-loader" }, { loader: "ts-loader" }]
+        use: [{ loader: 'babel-loader' }, { loader: 'ts-loader' }]
       },
       {
         test: /\.js$/,
         exclude: /node_modules/,
         use: {
-          loader: "babel-loader"
+          loader: 'babel-loader'
         }
       },
       {
         test: /\.html$/,
         use: [
           {
-            loader: "html-loader",
+            loader: 'html-loader',
             options: { minimize: true }
           }
         ]
       },
       {
         test: /\.(png|svg|jpg|gif)$/,
-        use: ["file-loader"]
+        use: ['file-loader']
       },
       {
         test: /\.scss$/,
-        use: ["style-loader", "css-loader", "sass-loader"]
+        use: ['style-loader', 'css-loader', 'sass-loader']
       }
     ]
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: "./src/index.html",
-      filename: "./index.html"
+      template: './src/index.html',
+      filename: './index.html'
     }),
     new MiniCssExtractPlugin({
-      filename: "name.css",
-      chunkFilename: "[id].css"
+      filename: 'name.css',
+      chunkFilename: '[id].css'
     })
   ]
 };
