@@ -12,7 +12,7 @@ interface PhotoItemProps {
 
 const PhotoItem: React.SFC<PhotoItemProps> = props => {
   return (
-    <figure className={classnames('photoItem', getSizeClassName(props.size))}>
+    <figure className={classnames('photo-item', getSizeClassName(props.size))}>
       <img src={props.src} />
       {props.caption && <figcaption>{props.caption}</figcaption>}
     </figure>

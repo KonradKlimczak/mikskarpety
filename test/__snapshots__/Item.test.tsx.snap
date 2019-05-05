@@ -2,7 +2,7 @@
 
 exports[`PhotoItem renders correctly 1`] = `
 <figure
-  className="photoItem"
+  className="photo-item size--medium"
 >
   <img
     src="images/pictures/w01.jpg"
