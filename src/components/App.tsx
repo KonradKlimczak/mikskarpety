@@ -7,6 +7,7 @@ import { acceptCookies } from '../actions';
 import { AppState } from '../reducers';
 import { Route } from 'react-router-dom';
 import Home from './Home/Home';
+import { setCookie } from '../utils/cookies';
 
 interface AppProps {
   cookies: boolean;
@@ -41,6 +42,7 @@ export default connect(
   },
   dispatch => ({
     onClick: () => {
+      setCookie('analitics', 'true', 365);
       dispatch(acceptCookies());
     }
   })

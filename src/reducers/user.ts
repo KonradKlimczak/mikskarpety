@@ -1,4 +1,5 @@
 import { UserAction } from '../actions';
+import { getCookie } from '../utils/cookies';
 
 export interface UserState {
   analitics: boolean;
@@ -6,7 +7,7 @@ export interface UserState {
 }
 
 const initialState: UserState = {
-  analitics: false,
+  analitics: getCookie('analitics') === 'true',
   search: ''
 };
 
