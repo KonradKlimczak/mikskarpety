@@ -9,6 +9,7 @@ const bs01 = require('../../images/pictures/bs01.jpg');
 const a03 = require('../../images/pictures/a03.jpg');
 const m06 = require('../../images/pictures/m06.jpg');
 const m05 = require('../../images/pictures/m05.jpg');
+const SockIcon = require('../../images/icons/Sock.svg');
 
 interface HomeProps {}
 
@@ -23,9 +24,14 @@ const Home: React.SFC<HomeProps> = () => {
         <PhotoItem src={m06} />
         <PhotoItem src={m05} />
       </div>
-      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Earum tenetur voluptatum quaerat perspiciatis excepturi,
-      deserunt tempora similique. Omnis iure suscipit expedita obcaecati rerum numquam cum eius ab placeat eum maiores,
-      deleniti accusamus quidem ad. Autem fugiat quod saepe molestiae ullam.
+      <div className='spin' style={{ display: 'inline-flex' }}>
+        <img src={SockIcon} />
+      </div>
+      <div>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Earum tenetur voluptatum quaerat perspiciatis
+        excepturi, deserunt tempora similique. Omnis iure suscipit expedita obcaecati rerum numquam cum eius ab placeat
+        eum maiores, deleniti accusamus quidem ad. Autem fugiat quod saepe molestiae ullam.
+      </div>
     </React.Fragment>
   );
 };
