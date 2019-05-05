@@ -2,6 +2,7 @@ import * as React from 'react';
 
 import { Size } from '../../utils/Size';
 import PhotoItem from '../Item/PhotoItem';
+import Spinner from '../Spinner/Spinner';
 
 const m08 = require('../../images/pictures/m08.jpg');
 const w01 = require('../../images/pictures/w01.jpg');
@@ -24,9 +25,7 @@ const Home: React.SFC<HomeProps> = () => {
         <PhotoItem src={m06} />
         <PhotoItem src={m05} />
       </div>
-      <div className='spin' style={{ display: 'inline-flex' }}>
-        <img src={SockIcon} />
-      </div>
+      <Spinner />
       <div>
         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Earum tenetur voluptatum quaerat perspiciatis
         excepturi, deserunt tempora similique. Omnis iure suscipit expedita obcaecati rerum numquam cum eius ab placeat
