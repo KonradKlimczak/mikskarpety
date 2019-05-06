@@ -6,28 +6,24 @@ import { connect } from 'react-redux';
 import { RemoteData, RemoteDataKind } from '../../utils/RemoteData';
 import { Sock } from '../../actions/sock';
 import { AppState } from '../../reducers';
+import { match } from 'react-router';
 
 interface SockOfferProps {
   socks: RemoteData<Sock[]>;
+  match: match<{
+    category: string;
+  }>;
 }
 
 const SockOffer: React.SFC<SockOfferProps> = props => {
-  React.useEffect(() => {
-    console.log('Test');
-  });
-
   let content = null;
 
-  switch (props.socks.kind) {
-    case RemoteDataKind.NotAsked:
-    case RemoteDataKind.Loading:
-      content = <div>Loading</div>;
-
-    default:
-      break;
-  }
-
-  return <div className={classnames('sock-offer')} />;
+  return (
+    <div className={classnames('sock-offer')}>
+      {props.match.params.category}
+      {content}
+    </div>
+  );
 };
 
 export default connect(

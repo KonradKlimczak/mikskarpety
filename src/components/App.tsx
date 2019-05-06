@@ -8,6 +8,7 @@ import { AppState } from '../reducers';
 import { Route } from 'react-router-dom';
 import Home from './Home/Home';
 import { setCookie } from '../utils/cookies';
+import SockOffer from './SockOffer/SockOffer';
 
 interface AppProps {
   cookies: boolean;
@@ -21,6 +22,7 @@ class App extends React.Component<AppProps> {
         <Navbar />
         <main className='main'>
           <Route path='/' exact component={Home} />
+          <Route path='/socks/:category' exact component={SockOffer} />
         </main>
         {!this.props.cookies && (
           <Notification severity={Severity.Info}>
