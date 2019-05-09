@@ -1,13 +1,14 @@
 import * as React from 'react';
-import Navbar from './Navbar/Navbar';
-import Notification from './Notification/Notification';
-import { Severity } from '../utils/Severity';
 import { connect } from 'react-redux';
+import { Route } from 'react-router-dom';
 import { acceptCookies } from '../actions';
 import { AppState } from '../reducers';
-import { Route } from 'react-router-dom';
-import Home from './Home/Home';
 import { setCookie } from '../utils/cookies';
+import { Severity } from '../utils/Severity';
+import Home from './Home/Home';
+import Navbar from './Navbar/Navbar';
+import Notification from './Notification/Notification';
+import SockDetail from './SockDetail/SockDetail';
 import SockOffer from './SockOffer/SockOffer';
 
 interface AppProps {
@@ -23,6 +24,7 @@ class App extends React.Component<AppProps> {
         <main className='main'>
           <Route path='/' exact component={Home} />
           <Route path='/socks/:category' exact component={SockOffer} />
+          <Route path='/sock/:slug' exact component={ó} />
         </main>
         {!this.props.cookies && (
           <Notification severity={Severity.Info}>
