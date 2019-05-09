@@ -2,10 +2,9 @@ import * as React from 'react';
 
 const Logo = require('../../images/mik-logo.svg');
 const SearchIcon = require('../../images/icons/Search.svg');
-const PhoneIcon = require('../../images/icons/Phone.svg');
-const EmailIcon = require('../../images/icons/Email.svg');
 import TextField from '../TextField/TextField';
 import { Link } from 'react-router-dom';
+import { Icon } from '../Icon/Icon';
 
 class Navbar extends React.PureComponent {
   render() {
@@ -15,13 +14,13 @@ class Navbar extends React.PureComponent {
           <div className='navbar-first-left'>
             <div className='navbar-phone-number'>
               <a href='tel://+48-605-585-944'>
-                <img src={PhoneIcon} />
+                <Icon icon='phone' />
                 (+48) 605-585-944
               </a>
             </div>
             <div className='navbar-email'>
               <a>
-                <img src={EmailIcon} />
+                <Icon icon='email' />
                 mik.skarpety@gmail.com
               </a>
             </div>
