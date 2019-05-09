@@ -24,7 +24,7 @@ class App extends React.Component<AppProps> {
         <main className='main'>
           <Route path='/' exact component={Home} />
           <Route path='/socks/:category' exact component={SockOffer} />
-          <Route path='/sock/:slug' exact component={ó} />
+          <Route path='/sock/:slug' exact component={SockDetail} />
         </main>
         {!this.props.cookies && (
           <Notification severity={Severity.Info}>
