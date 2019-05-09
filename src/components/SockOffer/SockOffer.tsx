@@ -4,9 +4,9 @@ import * as React from 'react';
 import { debounce } from '../../utils/debounce';
 import { connect } from 'react-redux';
 import { RemoteData, RemoteDataKind } from '../../utils/RemoteData';
-import { Sock } from '../../actions/sock';
 import { AppState } from '../../reducers';
 import { match } from 'react-router';
+import { Sock } from '../../data/Sock';
 
 interface SockOfferProps {
   socks: RemoteData<Sock[]>;

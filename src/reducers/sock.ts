@@ -1,5 +1,6 @@
 import { RemoteData, RemoteDataKind } from '../utils/RemoteData';
-import { Sock, SockAction } from '../actions/sock';
+import { SockAction } from '../actions/sock';
+import { Sock } from '../data/Sock';
 
 export interface SockState {
   list: RemoteData<Sock[]>;
