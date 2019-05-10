@@ -10,15 +10,14 @@ const bs01 = require('../../images/pictures/bs01.jpg');
 const a03 = require('../../images/pictures/a03.jpg');
 const m06 = require('../../images/pictures/m06.jpg');
 const m05 = require('../../images/pictures/m05.jpg');
-const SockIcon = require('../../images/icons/Sock.svg');
 
 interface HomeProps {}
 
 const Home: React.SFC<HomeProps> = () => {
   return (
     <React.Fragment>
-      <div className='photo-grid'>
-        <PhotoItem src={m08} size={Size.Big} caption='Swieta swieta' />
+      <div className="photo-grid">
+        <PhotoItem src={m08} size={Size.Big} caption="Swieta swieta" />
         <PhotoItem src={w01} />
         <PhotoItem src={bs01} />
         <PhotoItem src={a03} />

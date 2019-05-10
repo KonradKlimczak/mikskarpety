@@ -1,12 +1,11 @@
 import classnames from 'classnames';
 import * as React from 'react';
-
-import { debounce } from '../../utils/debounce';
 import { connect } from 'react-redux';
-import { RemoteData, RemoteDataKind } from '../../utils/RemoteData';
-import { AppState } from '../../reducers';
 import { match } from 'react-router';
+
 import { Sock } from '../../data/Sock';
+import { AppState } from '../../reducers';
+import { RemoteData } from '../../utils/RemoteData';
 
 interface SockDetailProps {
   sock: RemoteData<Sock>;

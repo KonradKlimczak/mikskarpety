@@ -1,6 +1,7 @@
-import * as React from 'react';
+import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 import { Route } from 'react-router-dom';
+
 import { acceptCookies } from '../actions';
 import { AppState } from '../reducers';
 import { setCookie } from '../utils/cookies';
@@ -16,15 +17,15 @@ interface AppProps {
   onClick: any;
 }
 
-class App extends React.Component<AppProps> {
+class App extends Component<AppProps> {
   render() {
     return (
-      <React.Fragment>
+      <Fragment>
         <Navbar />
-        <main className='main'>
-          <Route path='/' exact component={Home} />
-          <Route path='/socks/:category' exact component={SockOffer} />
-          <Route path='/sock/:slug' exact component={SockDetail} />
+        <main className="main">
+          <Route path="/" exact component={Home} />
+          <Route path="/socks/:category" exact component={SockOffer} />
+          <Route path="/sock/:slug" exact component={SockDetail} />
         </main>
         {!this.props.cookies && (
           <Notification severity={Severity.Info}>
@@ -33,7 +34,7 @@ class App extends React.Component<AppProps> {
             <button onClick={this.props.onClick}>Akceptuje</button>
           </Notification>
         )}
-      </React.Fragment>
+      </Fragment>
     );
   }
 }
