@@ -2,15 +2,14 @@ import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 import { Route } from 'react-router-dom';
 
-import { acceptCookies } from '../actions';
-import { IAppState } from '../reducers';
-import { setCookie } from '../utils/cookies';
-import { Severity } from '../utils/Severity';
-import Home from './Home/Home';
-import Navbar from './Navbar/Navbar';
-import Notification from './Notification/Notification';
-import SockDetail from './SockDetail/SockDetail';
-import SockOffer from './SockOffer/SockOffer';
+import { acceptCookies } from '../../actions';
+import { IAppState } from '../../reducers';
+import { setCookie } from '../../utils/cookies';
+import Home from '../Home/Home';
+import Navbar from '../Navbar/Navbar';
+import SockDetail from '../SockDetail/SockDetail';
+import SockOffer from '../SockOffer/SockOffer';
+import CookiesNotification from './CookiesNotification';
 
 interface IAppProps {
   cookies: boolean;
@@ -27,13 +26,7 @@ class App extends Component<IAppProps> {
           <Route path='/socks/:category' exact={true} component={SockOffer} />
           <Route path='/sock/:slug' exact={true} component={SockDetail} />
         </main>
-        {!this.props.cookies && (
-          <Notification severity={Severity.Info}>
-            Drogi Użytkowniku, Niniejsza strona korzysta z plików cookies dla celów statystycznych i marketingowych.
-            “Dowiedz się więcej” lub kliknij “Akceptuję”, w celu zaakceptowania wszystkich rodzajów cookies.
-            <button onClick={this.props.onClick}>Akceptuje</button>
-          </Notification>
-        )}
+        {!this.props.cookies && <CookiesNotification onAccpet={this.props.onClick} />}
       </Fragment>
     );
   }
