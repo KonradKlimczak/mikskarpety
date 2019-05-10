@@ -3,19 +3,19 @@ import * as React from 'react';
 import { connect } from 'react-redux';
 import { match } from 'react-router';
 
-import { Sock } from '../../data/Sock';
-import { AppState } from '../../reducers';
+import { ISock } from '../../data/Sock';
+import { IAppState } from '../../reducers';
 import { RemoteData } from '../../utils/RemoteData';
 
-interface SockDetailProps {
-  sock: RemoteData<Sock>;
+interface ISockDetailProps {
+  sock: RemoteData<ISock>;
   match: match<{
     slug: string;
   }>;
 }
 
-const SockDetail: React.FunctionComponent<SockDetailProps> = props => {
-  let content = null;
+const SockDetail: React.FunctionComponent<ISockDetailProps> = (props) => {
+  const content = null;
 
   return (
     <div className={classnames('sock-offer')}>
@@ -26,10 +26,10 @@ const SockDetail: React.FunctionComponent<SockDetailProps> = props => {
 };
 
 export default connect(
-  (state: AppState) => {
+  (state: IAppState) => {
     return {
-      sock: state.sock.list as any
+      sock: state.sock.list as any,
     };
   },
-  () => ({})
+  () => ({}),
 )(SockDetail);

@@ -5,11 +5,11 @@ import { Phone } from './Phone';
 
 export type IconName = 'email' | 'phone';
 
-interface IconProps {
+interface IIconProps {
   icon: IconName;
 }
 
-export const Icon: React.FunctionComponent<IconProps> = props => {
+export const Icon: React.FunctionComponent<IIconProps> = (props) => {
   switch (props.icon) {
     case 'email':
       return <Email />;

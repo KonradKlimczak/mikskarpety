@@ -1,21 +1,21 @@
-export interface SockSize {
+export interface ISockSize {
   from: number;
   to: number;
 }
 
-export interface Color {
+export interface IColor {
   id: string;
   hex: string;
   name: string;
 }
 
-export interface Sock {
+export interface ISock {
   id: string;
   name: string;
   src: string;
   tags: string[];
-  sizes: SockSize[];
+  sizes: ISockSize[];
   description: string;
   packing: number;
-  colors: Color[];
+  colors: IColor[];
 }

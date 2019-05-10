@@ -1,10 +1,8 @@
-import * as React from 'react';
+import React, { FunctionComponent } from 'react';
 
-const SockIcon = require('../../images/icons/Sock.svg');
+import SockIcon from '../../images/icons/Sock.svg';
 
-interface SpinnerProps {}
-
-const Spinner: React.SFC<SpinnerProps> = () => {
+const Spinner: FunctionComponent = () => {
   return (
     <div className='spinner'>
       <div className='spinning-socks'>

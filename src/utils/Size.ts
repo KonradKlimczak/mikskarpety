@@ -3,7 +3,7 @@ import { assertNever } from './assertNever';
 export enum Size {
   Small = 'Small',
   Medium = 'Medium',
-  Big = 'Big'
+  Big = 'Big',
 }
 
 export function getSizeClassName(size: Size = Size.Medium) {

@@ -3,14 +3,13 @@ import * as React from 'react';
 
 import { getSizeClassName, Size } from '../../utils/Size';
 
-
-interface PhotoItemProps {
+interface IPhotoItemProps {
   src: string;
   caption?: string;
   size?: Size;
 }
 
-const PhotoItem: React.SFC<PhotoItemProps> = props => {
+const PhotoItem: React.SFC<IPhotoItemProps> = (props) => {
   return (
     <figure className={classnames('photo-item', getSizeClassName(props.size))}>
       <img src={props.src} />

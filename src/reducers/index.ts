@@ -1,15 +1,16 @@
 import { combineReducers } from 'redux';
-import { user, UserState } from './user';
-import { sock, SockState } from './sock';
 
-export interface AppState {
-  user: UserState;
-  sock: SockState;
+import { ISockState, sock } from './sock';
+import { IUserState, user } from './user';
+
+export interface IAppState {
+  user: IUserState;
+  sock: ISockState;
 }
 
 const reducers = combineReducers({
+  sock,
   user,
-  sock
 });
 
 export default reducers;

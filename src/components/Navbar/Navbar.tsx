@@ -1,13 +1,13 @@
 import * as React from 'react';
-
-const Logo = require('../../images/mik-logo.svg');
-const SearchIcon = require('../../images/icons/Search.svg');
-import TextField from '../TextField/TextField';
 import { Link } from 'react-router-dom';
+
+import SearchIcon from '../../images/icons/Search.svg';
+import Logo from '../../images/mik-logo.svg';
 import { Icon } from '../Icon/Icon';
+import TextField from '../TextField/TextField';
 
 class Navbar extends React.PureComponent {
-  render() {
+  public render() {
     return (
       <nav className='navbar'>
         <div className='navbar-first'>
@@ -31,14 +31,7 @@ class Navbar extends React.PureComponent {
           </Link>
 
           <div className='navbar-first-right'>
-            <TextField
-              icon={SearchIcon}
-              placeholder='Find love'
-              onChange={value => {
-                console.log(value);
-              }}
-              debounce={1000}
-            />
+            <TextField icon={SearchIcon} placeholder='Find love' onChange={console.log} debounce={1000} />
           </div>
         </div>
 

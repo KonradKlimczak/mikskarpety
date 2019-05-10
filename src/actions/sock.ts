@@ -1,27 +1,26 @@
-import { Sock } from '../data/Sock';
+import { ISock } from '../data/Sock';
 
 export type SockAction =
   | { type: 'REQUEST_SOCK' }
-  | { type: 'RECEIVE_SOCK'; list: Sock[] }
+  | { type: 'RECEIVE_SOCK'; list: ISock[] }
   | { type: 'FAILED_SOCK'; error: Error };
-
 
 export function requestSock(): SockAction {
   return {
-    type: 'REQUEST_SOCK'
+    type: 'REQUEST_SOCK',
   };
 }
 
-export function receiveSock(list: Sock[]): SockAction {
+export function receiveSock(list: ISock[]): SockAction {
   return {
+    list,
     type: 'RECEIVE_SOCK',
-    list
   };
 }
 
 export function failedSock(error: Error): SockAction {
   return {
+    error,
     type: 'FAILED_SOCK',
-    error
   };
 }

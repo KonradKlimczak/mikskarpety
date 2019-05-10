@@ -2,7 +2,7 @@ export enum RemoteDataKind {
   NotAsked = 'NotAsked',
   Loading = 'Loading',
   Success = 'Success',
-  Failure = 'Failure'
+  Failure = 'Failure',
 }
 
 export type RemoteData<T> =

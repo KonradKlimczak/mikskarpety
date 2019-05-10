@@ -3,33 +3,26 @@ import * as React from 'react';
 import { connect } from 'react-redux';
 import { match } from 'react-router';
 
-import { Sock } from '../../data/Sock';
-import { AppState } from '../../reducers';
+import { ISock } from '../../data/Sock';
+import { IAppState } from '../../reducers';
 import { RemoteData } from '../../utils/RemoteData';
 
-interface SockOfferProps {
-  socks: RemoteData<Sock[]>;
+interface ISockOfferProps {
+  socks: RemoteData<ISock[]>;
   match: match<{
     category: string;
   }>;
 }
 
-const SockOffer: React.SFC<SockOfferProps> = props => {
-  let content = null;
-
-  return (
-    <div className={classnames('sock-offer')}>
-      {props.match.params.category}
-      {content}
-    </div>
-  );
+const SockOffer: React.SFC<ISockOfferProps> = (props) => {
+  return <div className={classnames('sock-offer')}>{props.match.params.category}</div>;
 };
 
 export default connect(
-  (state: AppState) => {
+  (state: IAppState) => {
     return {
-      sock: state.sock.list
+      sock: state.sock.list,
     };
   },
-  () => ({})
+  () => ({}),
 )(SockOffer);

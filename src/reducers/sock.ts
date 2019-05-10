@@ -1,16 +1,16 @@
-import { RemoteData, RemoteDataKind } from '../utils/RemoteData';
 import { SockAction } from '../actions/sock';
-import { Sock } from '../data/Sock';
+import { ISock } from '../data/Sock';
+import { RemoteData, RemoteDataKind } from '../utils/RemoteData';
 
-export interface SockState {
-  list: RemoteData<Sock[]>;
+export interface ISockState {
+  list: RemoteData<ISock[]>;
 }
 
-const initialState: SockState = {
-  list: { kind: RemoteDataKind.NotAsked }
+const initialState: ISockState = {
+  list: { kind: RemoteDataKind.NotAsked },
 };
 
-export function sock(state = initialState, action: SockAction): SockState {
+export function sock(state = initialState, action: SockAction): ISockState {
   switch (action.type) {
     case 'REQUEST_SOCK':
       return { ...state, list: { kind: RemoteDataKind.Loading } };

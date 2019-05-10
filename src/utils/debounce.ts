@@ -1,12 +1,10 @@
-export function debounce(func: Function, waitMilliseconds = 50) {
+export function debounce(func: any, waitMilliseconds = 50) {
   let timeoutId: NodeJS.Timeout | null;
 
   return function(this: any, ...args: any[]) {
-    const context = this;
-
-    const doLater = function() {
+    const doLater = () => {
       timeoutId = null;
-      func.apply(context, args);
+      func.apply(this, args);
     };
 
     if (timeoutId !== null) {

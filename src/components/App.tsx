@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Route } from 'react-router-dom';
 
 import { acceptCookies } from '../actions';
-import { AppState } from '../reducers';
+import { IAppState } from '../reducers';
 import { setCookie } from '../utils/cookies';
 import { Severity } from '../utils/Severity';
 import Home from './Home/Home';
@@ -12,20 +12,20 @@ import Notification from './Notification/Notification';
 import SockDetail from './SockDetail/SockDetail';
 import SockOffer from './SockOffer/SockOffer';
 
-interface AppProps {
+interface IAppProps {
   cookies: boolean;
   onClick: any;
 }
 
-class App extends Component<AppProps> {
-  render() {
+class App extends Component<IAppProps> {
+  public render() {
     return (
       <Fragment>
         <Navbar />
-        <main className="main">
-          <Route path="/" exact component={Home} />
-          <Route path="/socks/:category" exact component={SockOffer} />
-          <Route path="/sock/:slug" exact component={SockDetail} />
+        <main className='main'>
+          <Route path='/' exact={true} component={Home} />
+          <Route path='/socks/:category' exact={true} component={SockOffer} />
+          <Route path='/sock/:slug' exact={true} component={SockDetail} />
         </main>
         {!this.props.cookies && (
           <Notification severity={Severity.Info}>
@@ -40,15 +40,15 @@ class App extends Component<AppProps> {
 }
 
 export default connect(
-  (state: AppState) => {
+  (state: IAppState) => {
     return {
-      cookies: state.user.analitics
+      cookies: state.user.analitics,
     };
   },
-  dispatch => ({
+  (dispatch) => ({
     onClick: () => {
       setCookie('analitics', 'true', 365);
       dispatch(acceptCookies());
-    }
-  })
+    },
+  }),
 )(App);

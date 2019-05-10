@@ -1,17 +1,17 @@
 import { UserAction } from '../actions';
 import { getCookie } from '../utils/cookies';
 
-export interface UserState {
+export interface IUserState {
   analitics: boolean;
   search: string;
 }
 
-const initialState: UserState = {
+const initialState: IUserState = {
   analitics: getCookie('analitics') === 'true',
-  search: ''
+  search: '',
 };
 
-export function user(state = initialState, action: UserAction): UserState {
+export function user(state = initialState, action: UserAction): IUserState {
   switch (action.type) {
     case 'ACCEPT_COOKIES':
       return { ...state, analitics: true };
