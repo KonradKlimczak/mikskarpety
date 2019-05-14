@@ -9,6 +9,7 @@ import w01 from '../../images/pictures/w01.jpg';
 import { Size } from '../../utils/Size';
 import PhotoItem from '../Item/PhotoItem';
 import Spinner from '../Spinner/Spinner';
+import Button from '../Button/Button';
 
 const Home: FunctionComponent = () => {
   return (
@@ -22,6 +23,9 @@ const Home: FunctionComponent = () => {
         <PhotoItem src={m05} />
       </div>
       <Spinner />
+      <Button primary round>
+        TEST
+      </Button>
       <div>
         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Earum tenetur voluptatum quaerat perspiciatis
         excepturi, deserunt tempora similique. Omnis iure suscipit expedita obcaecati rerum numquam cum eius ab placeat

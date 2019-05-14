@@ -1,13 +1,14 @@
 body {
-    margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, "Fira Sans", "Droid Sans",
-        "Helvetica Neue", sans-serif;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, 'Fira Sans', 'Droid Sans',
+    'Helvetica Neue', sans-serif;
 }
 
-@import "variables";
-@import "utils";
-@import "spinner";
-@import "notification";
-@import "navbar";
-@import "main";
-@import "text-field";
+@import 'variables';
+@import 'utils';
+@import 'button';
+@import 'text-field';
+@import 'spinner';
+@import 'notification';
+@import 'navbar';
+@import 'main';
