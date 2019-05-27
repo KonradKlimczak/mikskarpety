@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button add classes 1`] = `
+<button
+  className="button button-primary"
+>
+  Test
+</button>
+`;
+
+exports[`Button add classes 2`] = `
+<button
+  className="button button-round"
+  round={true}
+>
+  Test
+</button>
+`;
+
+exports[`Button renders correctly 1`] = `
+<button
+  className="button"
+>
+  Test
+</button>
+`;

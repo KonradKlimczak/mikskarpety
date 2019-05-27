@@ -1,0 +1,23 @@
+.button {
+  border: none;
+  color: white;
+  overflow: hidden;
+  margin: 1rem;
+  padding: 0.8rem 1rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  
+  &:hover {
+    box-shadow: 0 0 5px 0 rgba($primary-color, 0.5);
+  }
+
+  &.button-primary {
+    background-color: $primary-color;
+  }
+  &.button-primary:focus {
+    background-color: darken($primary-color, 10%);
+  }
+  &.button-round {
+    border-radius: 10rem;
+  }
+}
