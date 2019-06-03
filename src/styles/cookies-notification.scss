@@ -1,0 +1,10 @@
+.cookies-notification {
+  padding: 1rem;
+  background-color: #e6e6e6;
+  font-size: 0.8rem;
+
+  .cookies-notification--buttons {
+    display: flex;
+    justify-content: flex-end
+  }
+}
