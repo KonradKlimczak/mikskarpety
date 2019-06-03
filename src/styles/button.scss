@@ -14,7 +14,8 @@
     background-color: $primary-color;
   }
 
-  &.button-primary:focus {
+  &.button-primary:hover {
+    box-shadow: 0 0 5px 0 rgba($primary-color, 0.5);
     background-color: darken($primary-color, 10%);
   }
 
