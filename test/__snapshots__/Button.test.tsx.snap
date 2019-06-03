@@ -2,7 +2,7 @@
 
 exports[`Button add classes 1`] = `
 <button
-  className="button button-primary"
+  className="button button-primary size--medium"
 >
   Test
 </button>
@@ -10,7 +10,7 @@ exports[`Button add classes 1`] = `
 
 exports[`Button add classes 2`] = `
 <button
-  className="button button-round"
+  className="button button-round size--medium"
   round={true}
 >
   Test
@@ -19,7 +19,7 @@ exports[`Button add classes 2`] = `
 
 exports[`Button renders correctly 1`] = `
 <button
-  className="button"
+  className="button size--medium"
 >
   Test
 </button>
