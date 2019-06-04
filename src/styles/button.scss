@@ -10,7 +10,7 @@
   color: $primary-color;
 
   &.button-primary {
-    color: white;
+    color: $text-on-primary-color;
     background-color: $primary-color;
   }
 
