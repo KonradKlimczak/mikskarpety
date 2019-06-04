@@ -20,13 +20,13 @@ class App extends Component<IAppProps> {
   public render() {
     return (
       <Fragment>
+        {!this.props.cookies && <CookiesNotification onAccpet={this.props.onClick} />}
         <Navbar />
         <main className='main'>
           <Route path='/' exact={true} component={Home} />
           <Route path='/socks/:category' exact={true} component={SockOffer} />
           <Route path='/sock/:slug' exact={true} component={SockDetail} />
         </main>
-        {!this.props.cookies && <CookiesNotification onAccpet={this.props.onClick} />}
       </Fragment>
     );
   }
