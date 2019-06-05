@@ -1,0 +1,29 @@
+.photo-item {
+    cursor: pointer;
+    box-shadow: 0 0 1px 1px $cookie-notification-background;
+
+    img {
+        padding: 1px;
+    }
+    .size--small img {
+        height: $photo-item-height-small-px;
+    }
+
+    &.size--medium img {
+        height: $photo-item-height-px;
+    }
+
+    &.size--big img {
+        height: $photo-item-height-big-px;
+    }
+
+    figcaption {
+        text-align: center;
+    }
+    &:hover figcaption {
+        text-decoration: underline;
+    }
+    &:focus {
+        box-shadow: 0 0 1px 1px darken($cookie-notification-background, 50%);
+    }
+}
