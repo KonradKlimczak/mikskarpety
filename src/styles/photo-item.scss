@@ -1,6 +1,6 @@
 .photo-item {
     cursor: pointer;
-    box-shadow: 0 0 1px 1px $cookie-notification-background;
+    box-shadow: 0 0 1px 1px $secondary-color;
 
     img {
         padding: 1px;
@@ -24,6 +24,6 @@
         text-decoration: underline;
     }
     &:focus {
-        box-shadow: 0 0 1px 1px darken($cookie-notification-background, 50%);
+        box-shadow: 0 0 1px 1px darken($secondary-color, 50%);
     }
 }
