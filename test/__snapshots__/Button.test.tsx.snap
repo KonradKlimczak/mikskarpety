@@ -11,7 +11,6 @@ exports[`Button add classes 1`] = `
 exports[`Button add classes 2`] = `
 <button
   className="button button-round size--medium"
-  round={true}
 >
   Test
 </button>
