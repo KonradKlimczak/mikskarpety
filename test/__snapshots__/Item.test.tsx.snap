@@ -3,6 +3,7 @@
 exports[`PhotoItem renders correctly 1`] = `
 <figure
   className="photo-item size--medium"
+  tabIndex={0}
 >
   <img
     src="images/pictures/w01.jpg"

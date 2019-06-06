@@ -1,3 +1,7 @@
 $text-on-primary-color: white;
 $primary-color: #c20000;
-$cookie-notification-background: #e6e6e6;
+$secondary-color: #e6e6e6;
+
+$photo-item-height-px: 200px;
+$photo-item-height-small-px: $photo-item-height-px / 2;
+$photo-item-height-big-px: $photo-item-height-px * 2;
