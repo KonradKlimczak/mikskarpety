@@ -9,14 +9,14 @@ interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 const Button: FunctionComponent<IButtonProps> = (props) => {
-  const { primary, ...buttonProps } = props;
+  const { primary, round, size, ...buttonProps } = props;
   return (
     <button
       {...buttonProps}
       className={classnames('button', {
-        ['button-primary']: props.primary,
-        ['button-round']: props.round,
-      }, getSizeClassName(props.size))}
+        ['button-primary']: primary,
+        ['button-round']: round,
+      }, getSizeClassName(size))}
     >
       {props.children}
     </button>
