@@ -51,7 +51,7 @@ export default connect(
     onFetchSocks: () => {
       dispatch(requestSock());
       new Promise((resolve) => {
-        resolve();
+        setTimeout(() => resolve(), 1000);
       }).then(() => {
         dispatch(
           receiveSock([
