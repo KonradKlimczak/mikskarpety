@@ -61,7 +61,7 @@ module.exports = [{
     })
   ]
 }, {
-  entry: './src/sw.js',
+  entry: './src/serviceWorker.js',
   output: {
     globalObject: 'this',
     path: path.resolve(__dirname, 'dist'),
