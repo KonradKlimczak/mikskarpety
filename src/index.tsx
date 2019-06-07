@@ -24,12 +24,14 @@ ReactDOM.render(
 
 if ('serviceWorker' in navigator) {
   (window || {} as any).addEventListener('load', function () {
-    navigator.serviceWorker.register('/sw.js').then(function (registration) {
-      // Registration was successful
-      console.log('ServiceWorker registration successful with scope: ', registration.scope);
-    }, function (err) {
-      // registration failed :(
-      console.log('ServiceWorker registration failed: ', err);
-    });
+    navigator.serviceWorker.register('/serviceWorker.js')
+      .then(
+        (registration) => {
+          console.log('ServiceWorker registration successful with scope: ', registration.scope);
+        },
+        (err) => {
+          console.log('ServiceWorker registration failed: ', err);
+        }
+      );
   });
 }

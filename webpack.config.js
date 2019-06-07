@@ -65,7 +65,7 @@ module.exports = [{
   output: {
     globalObject: 'this',
     path: path.resolve(__dirname, 'dist'),
-    filename: 'sw.js',
+    filename: 'serviceWorker.js',
     publicPath: '/'
   },
   devServer: {
