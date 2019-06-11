@@ -2,7 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
-module.exports = {
+module.exports = [{
   devtool: 'source-map',
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -10,16 +10,19 @@ module.exports = {
   },
   devServer: {
     historyApiFallback: true,
-    contentBase: path.resolve(__dirname, 'dist')
+    contentBase: path.resolve(__dirname, 'dist'),
   },
   resolve: {
     extensions: ['.ts', '.tsx', '.js']
   },
   module: {
-    rules: [
-      {
+    rules: [{
         test: /\.tsx?$/,
-        use: [{ loader: 'babel-loader' }, { loader: 'ts-loader' }]
+        use: [{
+          loader: 'babel-loader'
+        }, {
+          loader: 'ts-loader'
+        }]
       },
       {
         test: /\.js$/,
@@ -30,12 +33,12 @@ module.exports = {
       },
       {
         test: /\.html$/,
-        use: [
-          {
-            loader: 'html-loader',
-            options: { minimize: true }
+        use: [{
+          loader: 'html-loader',
+          options: {
+            minimize: true
           }
-        ]
+        }]
       },
       {
         test: /\.(png|svg|jpg|gif)$/,
@@ -57,4 +60,27 @@ module.exports = {
       chunkFilename: '[id].css'
     })
   ]
-};
+}, {
+  entry: './src/serviceWorker.js',
+  output: {
+    globalObject: 'this',
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'serviceWorker.js',
+    publicPath: '/'
+  },
+  devServer: {
+    contentBase: path.resolve(__dirname, 'dist'),
+  },
+  resolve: {
+    extensions: ['.js']
+  },
+  module: {
+    rules: [{
+      test: /\.js$/,
+      exclude: /node_modules/,
+      use: {
+        loader: 'babel-loader'
+      }
+    }]
+  }
+}];
