@@ -11,6 +11,7 @@ module.exports = [{
   devServer: {
     historyApiFallback: true,
     contentBase: path.resolve(__dirname, 'dist'),
+    port: 9001,
   },
   resolve: {
     extensions: ['.ts', '.tsx', '.js']
@@ -18,6 +19,7 @@ module.exports = [{
   module: {
     rules: [{
         test: /\.tsx?$/,
+        exclude: /cypress/,
         use: [{
           loader: 'babel-loader'
         }, {
@@ -70,6 +72,7 @@ module.exports = [{
   },
   devServer: {
     contentBase: path.resolve(__dirname, 'dist'),
+    port: 9001,
   },
   resolve: {
     extensions: ['.js']

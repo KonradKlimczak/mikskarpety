@@ -10,5 +10,5 @@
     "jsx": "preserve",
     "strict": true
   },
-  "exclude": ["test"]
+  "exclude": ["test", "cypress"]
 }
