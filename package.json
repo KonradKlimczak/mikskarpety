@@ -6,7 +6,7 @@
   "scripts": {
     "start": "webpack-dev-server --mode development --open --hot",
     "build": "webpack --mode production",
-    "test": "jest",
+    "test": "jest --coverage",
     "test-update": "jest --updateSnapshot",
     "lint": "tslint -c tslint.json 'src/**/*.ts' 'src/**/*.tsx'",
     "lint-fix": "tslint --fix -c tslint.json 'src/**/*.ts' 'src/**/*.tsx'"
