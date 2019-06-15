@@ -5,10 +5,12 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --mode development --open --hot",
+    "start-omg": "webpack-dev-server --mode development",
     "build": "webpack --mode production",
     "test": "jest",
-    "test-e2e": "cypress run --port 8081",
-    "test-e2e-open": "cypress open --port 8081",
+    "test:cypress": "start-server-and-test start-omg http://localhost:9001 cypress",
+    "cypress": "cypress run --port 8081",
+    "cypress-open": "cypress open --port 8081",
     "test-update": "jest --updateSnapshot",
     "lint": "tslint -c tslint.json 'src/**/*.ts' 'src/**/*.tsx'",
     "lint-fix": "tslint --fix -c tslint.json 'src/**/*.ts' 'src/**/*.tsx'"
@@ -54,6 +56,7 @@
     "react-test-renderer": "^16.8.6",
     "react-testing-library": "^7.0.0",
     "sass-loader": "^7.1.0",
+    "start-server-and-test": "^1.9.1",
     "style-loader": "^0.23.1",
     "ts-loader": "^5.4.3",
     "tslint": "^5.16.0",
