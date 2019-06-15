@@ -2,7 +2,7 @@ import {} from 'jest';
 
 import { debounce } from '../../src/utils/debounce';
 
-it('getSizeClassName test', () => {
+it('test testFunc is debounced to one call', () => {
   jest.useFakeTimers();
 
   const testFunc = jest.fn();
