@@ -70,10 +70,6 @@ module.exports = [{
     filename: 'serviceWorker.js',
     publicPath: '/'
   },
-  devServer: {
-    contentBase: path.resolve(__dirname, 'dist'),
-    port: 9001,
-  },
   resolve: {
     extensions: ['.js']
   },
