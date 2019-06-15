@@ -3,6 +3,9 @@ node_js:
   - "node"
   - "10"
 
+env:
+  - START_SERVER_AND_TEST_INSECURE=1
+
 install: yarn
 
 script: yarn test & yarn test:cypress
