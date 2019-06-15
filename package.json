@@ -8,7 +8,7 @@
     "start-omg": "webpack-dev-server --mode development",
     "build": "webpack --mode production",
     "test": "jest",
-    "test:cypress": "start-server-and-test start-omg http://localhost:9001 cypress",
+    "test:cypress": "start-server-and-test start-omg http-get://localhost:9001 cypress",
     "cypress": "cypress run --port 8081",
     "cypress-open": "cypress open --port 8081",
     "test-update": "jest --updateSnapshot",
