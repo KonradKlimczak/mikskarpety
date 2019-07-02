@@ -5,11 +5,10 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --mode development --open --hot",
-    "start-omg": "webpack-dev-server --mode development",
     "build": "webpack --mode production",
     "test": "jest",
     "test-update": "jest --updateSnapshot",
-    "test:cypress": "start-server-and-test start-omg http-get://localhost:9001 cypress",
+    "test:cypress": "start-server-and-test start http-get://localhost:9001 cypress",
     "cypress": "cypress run --port 8081",
     "cypress-open": "cypress open --port 8081",
     "lint": "tslint -c tslint.json 'src/**/*.ts' 'src/**/*.tsx'",
