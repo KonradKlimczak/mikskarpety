@@ -23,15 +23,14 @@ ReactDOM.render(
 // Register a service worker
 
 if ('serviceWorker' in navigator) {
-  (window || {} as any).addEventListener('load', function () {
-    navigator.serviceWorker.register('/serviceWorker.js')
-      .then(
-        (registration) => {
-          console.log('ServiceWorker registration successful with scope: ', registration.scope);
-        },
-        (err) => {
-          console.log('ServiceWorker registration failed: ', err);
-        }
-      );
+  (window || ({} as any)).addEventListener('load', function() {
+    navigator.serviceWorker.register('/serviceWorker.js').then(
+      (registration) => {
+        console.log('ServiceWorker registration successful with scope: ', registration.scope);
+      },
+      (err) => {
+        console.log('ServiceWorker registration failed: ', err);
+      },
+    );
   });
 }
