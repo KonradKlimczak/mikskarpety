@@ -11,12 +11,14 @@ import m05 from '../../images/pictures/m05.jpg';
 import { IAppState } from '../../reducers';
 import { RemoteData, RemoteDataKind } from '../../utils/RemoteData';
 import RemoteLoader from '../../utils/RemoteLoader';
+import { SockSizes } from './SockSizes';
 
 interface ISockDetailProps {
   socks: RemoteData<ISock[]>;
   match: match<{
     slug: string;
   }>;
+  onFetchSocks: () => void;
 }
 
 const SockDetail: React.FunctionComponent<ISockDetailProps> = (props) => {
@@ -40,7 +42,18 @@ const SockDetail: React.FunctionComponent<ISockDetailProps> = (props) => {
               </div>
             );
           }
-          return <div>Szczegóły skarpety</div>;
+          return (
+            <div className='mik-sock-details'>
+              <div className='mik-sock-details-images'>
+                <img src={sock.src} />
+              </div>
+              <div className='mik-sock-details-info'>
+                <div>{sock.description}</div>
+                <SockSizes sizes={sock.sizes} />
+                <div>Skarpety kolory</div>
+              </div>
+            </div>
+          );
         }}
       </RemoteLoader>
     </div>
@@ -62,11 +75,11 @@ export default connect(
         dispatch(
           receiveSock([
             {
-              id: '',
+              id: 'test',
               colors: [],
-              description: '',
+              description: 'Bardzo fajne skarpety',
               name: 'Skarpety garniturowe',
-              sizes: [],
+              sizes: [{ from: 38, to: 40 }],
               tags: [],
               packing: 10,
               src: m05,
