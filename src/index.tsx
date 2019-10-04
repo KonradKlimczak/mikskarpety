@@ -6,7 +6,7 @@ import { Provider } from 'react-redux';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { createStore } from 'redux';
 
-import App from './components/App/App';
+import { App } from './components/App';
 import reducers from './reducers';
 
 const store = createStore(reducers);
@@ -22,7 +22,7 @@ ReactDOM.render(
 
 // Register a service worker
 
-if ('serviceWorker' in navigator) {
+if (process.env.NODE_ENV === 'production' && 'serviceWorker' in navigator) {
   (window || ({} as any)).addEventListener('load', function() {
     navigator.serviceWorker.register('/serviceWorker.js').then(
       (registration) => {

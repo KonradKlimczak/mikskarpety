@@ -1,6 +1,6 @@
 import {} from 'jest';
 
-import { Size, getSizeClassName } from '../../src/utils/Size';
+import { Size, getSizeClassName } from '../../src/utils';
 
 it('test if getSizeClassName returns size classes', () => {
   expect(getSizeClassName).toBeDefined();

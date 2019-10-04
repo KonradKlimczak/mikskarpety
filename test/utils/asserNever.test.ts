@@ -1,6 +1,6 @@
 import {} from 'jest';
 
-import { assertNever } from '../../src/utils/assertNever';
+import { assertNever } from '../../src/utils';
 
 it('test if assertNever throws an error on execution', () => {
   expect(assertNever).toBeDefined();

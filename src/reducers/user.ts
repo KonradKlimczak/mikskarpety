@@ -1,5 +1,5 @@
 import { UserAction } from '../actions';
-import { getCookie } from '../utils/cookies';
+import { getCookie } from '../utils';
 
 export interface IUserState {
   analitics: boolean;

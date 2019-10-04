@@ -6,10 +6,10 @@ import m05 from '../../images/pictures/m05.jpg';
 import m06 from '../../images/pictures/m06.jpg';
 import m08 from '../../images/pictures/m08.jpg';
 import w01 from '../../images/pictures/w01.jpg';
-import { Size } from '../../utils/Size';
-import PhotoItem from '../Item/PhotoItem';
-import Spinner from '../Spinner/Spinner';
-import Button from '../Button/Button';
+import { Size } from '../../utils';
+import { PhotoItem } from '../Item';
+import { Spinner } from '../Spinner';
+import { Button } from '../Button';
 
 const Home: FunctionComponent = () => {
   return (
