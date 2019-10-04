@@ -8,11 +8,12 @@ interface IRemoteLoaderProps<T> {
   remote: RemoteData<T>;
   children: (data: T) => ReactNode;
   tryAgain?: () => void;
+  onFailure?: (error: Error) => ReactNode;
 }
 
 export class RemoteLoader<T> extends PureComponent<IRemoteLoaderProps<T>> {
   public render() {
-    const { remote, children } = this.props;
+    const { remote, children, onFailure } = this.props;
     switch (remote.kind) {
       case RemoteDataKind.NotAsked:
         return <div> nice not asked yet </div>;
@@ -21,7 +22,7 @@ export class RemoteLoader<T> extends PureComponent<IRemoteLoaderProps<T>> {
       case RemoteDataKind.Success:
         return children(remote.data);
       case RemoteDataKind.Failure:
-        return <div>daaaamn</div>;
+        return onFailure ? onFailure(remote.error) : <div>daaaamn</div>;
 
       default:
         return assertNever(remote);

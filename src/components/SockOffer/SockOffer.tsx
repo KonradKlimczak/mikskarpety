@@ -8,6 +8,7 @@ import m05 from '../../images/pictures/m05.jpg';
 import { IAppState } from '../../reducers';
 import { RemoteData, RemoteDataKind, RemoteLoader, Size } from '../../utils';
 import { PhotoItem } from '../Item';
+import { Link } from 'react-router-dom';
 
 interface ISockOfferProps {
   socks: RemoteData<ISock[]>;
@@ -30,7 +31,9 @@ const SockOffer: SFC<ISockOfferProps> = (props) => {
         {(data) => (
           <div className={classnames('sock-offer')}>
             {data.map((sock) => (
-              <PhotoItem size={Size.Big} src={sock.src} caption={sock.name} />
+              <Link key={sock.id} to={`/sock/${sock.id}`}>
+                <PhotoItem size={Size.Big} src={sock.src} caption={sock.name} />
+              </Link>
             ))}
           </div>
         )}
@@ -54,11 +57,11 @@ export default connect(
         dispatch(
           receiveSock([
             {
-              id: '',
+              id: 'test',
               colors: [],
-              description: '',
+              description: 'Bardzo fajne skarpety',
               name: 'Skarpety garniturowe',
-              sizes: [],
+              sizes: [{ from: 38, to: 40 }],
               tags: [],
               packing: 10,
               src: m05,

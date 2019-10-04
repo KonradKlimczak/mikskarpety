@@ -7,8 +7,8 @@ import { setCookie } from '../../utils';
 import Home from '../Home/Home';
 import { Navbar } from '../Navbar';
 import SockDetail from '../SockDetail/SockDetail';
-import SockOffer from '../SockOffer/SockOffer';
 import { CookiesNotification } from './CookiesNotification';
+import SockOffer from '../SockOffer';
 
 interface IAppProps {
   cookies: boolean;
