@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
-import NotFoundSVG from '../../images/NotFound.svg';
-import Button from '../Button/Button';
 import { Link } from 'react-router-dom';
+import NotFoundSVG from '../../images/NotFound.svg';
+import { Button } from '../Button';
 
 export const NotFound: FC = () => (
   <div className='not-found'>

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { assertNever } from '../../utils/assertNever';
+import { assertNever } from '../../utils';
 import { Email } from './Email';
 import { Phone } from './Phone';
 

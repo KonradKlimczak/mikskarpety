@@ -2,15 +2,12 @@ import classnames from 'classnames';
 import React, { Fragment, SFC, useEffect } from 'react';
 import { connect } from 'react-redux';
 import { match } from 'react-router';
-
 import { receiveSock, requestSock } from '../../actions/sock';
 import { ISock } from '../../data/Sock';
 import m05 from '../../images/pictures/m05.jpg';
 import { IAppState } from '../../reducers';
-import { RemoteData, RemoteDataKind } from '../../utils/RemoteData';
-import RemoteLoader from '../../utils/RemoteLoader';
-import { Size } from '../../utils/Size';
-import PhotoItem from '../Item/PhotoItem';
+import { RemoteData, RemoteDataKind, RemoteLoader, Size } from '../../utils';
+import { PhotoItem } from '../Item';
 
 interface ISockOfferProps {
   socks: RemoteData<ISock[]>;

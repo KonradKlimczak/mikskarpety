@@ -1,7 +1,7 @@
 import classnames from 'classnames';
-import * as React from 'react';
+import React from 'react';
 
-import { getSizeClassName, Size } from '../../utils/Size';
+import { getSizeClassName, Size } from '../../utils';
 
 interface IPhotoItemProps {
   src: string;
@@ -9,7 +9,7 @@ interface IPhotoItemProps {
   size?: Size;
 }
 
-const PhotoItem: React.SFC<IPhotoItemProps> = (props) => {
+export const PhotoItem: React.SFC<IPhotoItemProps> = (props) => {
   return (
     <figure className={classnames('photo-item', getSizeClassName(props.size))} tabIndex={0}>
       <img src={props.src} />
@@ -17,5 +17,3 @@ const PhotoItem: React.SFC<IPhotoItemProps> = (props) => {
     </figure>
   );
 };
-
-export default PhotoItem;

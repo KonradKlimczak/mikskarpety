@@ -1,6 +1,6 @@
 import React, { PureComponent, ReactNode } from 'react';
 
-import Spinner from '../components/Spinner/Spinner';
+import { Spinner } from '../components/Spinner';
 import { assertNever } from './assertNever';
 import { RemoteData, RemoteDataKind } from './RemoteData';
 
@@ -10,7 +10,7 @@ interface IRemoteLoaderProps<T> {
   tryAgain?: () => void;
 }
 
-class RemoteLoader<T> extends PureComponent<IRemoteLoaderProps<T>> {
+export class RemoteLoader<T> extends PureComponent<IRemoteLoaderProps<T>> {
   public render() {
     const { remote, children } = this.props;
     switch (remote.kind) {
@@ -28,4 +28,3 @@ class RemoteLoader<T> extends PureComponent<IRemoteLoaderProps<T>> {
     }
   }
 }
-export default RemoteLoader;

@@ -1,6 +1,6 @@
 import {} from 'jest';
 
-import { debounce } from '../../src/utils/debounce';
+import { debounce } from '../../src/utils';
 
 it('test testFunc is debounced to one call', () => {
   jest.useFakeTimers();

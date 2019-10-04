@@ -1,7 +1,7 @@
 import classnames from 'classnames';
-import * as React from 'react';
+import React from 'react';
 
-import { debounce } from '../../utils/debounce';
+import { debounce } from '../../utils';
 
 interface ITextFieldProps {
   icon?: string;
@@ -10,7 +10,7 @@ interface ITextFieldProps {
   onChange: (value: string) => void;
 }
 
-const TextField: React.SFC<ITextFieldProps> = (props) => {
+export const TextField: React.SFC<ITextFieldProps> = (props) => {
   const handleChange = props.debounce
     ? debounce((value: string) => {
         props.onChange(value);
@@ -30,5 +30,3 @@ const TextField: React.SFC<ITextFieldProps> = (props) => {
     </div>
   );
 };
-
-export default TextField;

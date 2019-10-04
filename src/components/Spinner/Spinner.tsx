@@ -1,8 +1,8 @@
-import React, { FunctionComponent } from 'react';
+import React, { FC } from 'react';
 
 import SockIcon from '../../images/icons/Sock.svg';
 
-const Spinner: FunctionComponent = () => {
+export const Spinner: FC = () => {
   return (
     <div className='spinner'>
       <div className='spinning-socks'>
@@ -14,5 +14,3 @@ const Spinner: FunctionComponent = () => {
     </div>
   );
 };
-
-export default Spinner;

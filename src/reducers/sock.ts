@@ -1,6 +1,6 @@
 import { SockAction } from '../actions/sock';
 import { ISock } from '../data/Sock';
-import { RemoteData, RemoteDataKind } from '../utils/RemoteData';
+import { RemoteData, RemoteDataKind } from '../utils';
 
 export interface ISockState {
   list: RemoteData<ISock[]>;
