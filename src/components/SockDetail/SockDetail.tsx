@@ -1,26 +1,61 @@
 import classnames from 'classnames';
 import * as React from 'react';
+import { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { match } from 'react-router';
 
+import { receiveSock, requestSock } from '../../actions/sock';
 import { ISock } from '../../data/Sock';
+import NotFound from '../../images/NotFound.svg';
+import m05 from '../../images/pictures/m05.jpg';
 import { IAppState } from '../../reducers';
-import { RemoteData } from '../../utils/RemoteData';
+import { RemoteData, RemoteDataKind } from '../../utils/RemoteData';
+import RemoteLoader from '../../utils/RemoteLoader';
+import { SockSizes } from './SockSizes';
 
 interface ISockDetailProps {
-  sock: RemoteData<ISock>;
+  socks: RemoteData<ISock[]>;
   match: match<{
     slug: string;
   }>;
+  onFetchSocks: () => void;
 }
 
 const SockDetail: React.FunctionComponent<ISockDetailProps> = (props) => {
-  const content = null;
+  useEffect(() => {
+    if (props.socks.kind === RemoteDataKind.NotAsked) {
+      props.onFetchSocks();
+    }
+  });
 
   return (
     <div className={classnames('sock-offer')}>
-      {props.match.params.slug}
-      {content}
+      <RemoteLoader remote={props.socks}>
+        {(data) => {
+          const sock = data.find((s) => s.id === props.match.params.slug);
+          if (!sock) {
+            return (
+              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                <img src={NotFound} alt='Not found' />
+                <h1>Upsss...</h1>
+                <h2>Nie odnaleziono drugiej skarpety od tej pary... Sorki.</h2>
+              </div>
+            );
+          }
+          return (
+            <div className='mik-sock-details'>
+              <div className='mik-sock-details-images'>
+                <img src={sock.src} />
+              </div>
+              <div className='mik-sock-details-info'>
+                <div>{sock.description}</div>
+                <SockSizes sizes={sock.sizes} />
+                <div>Skarpety kolory</div>
+              </div>
+            </div>
+          );
+        }}
+      </RemoteLoader>
     </div>
   );
 };
@@ -28,8 +63,30 @@ const SockDetail: React.FunctionComponent<ISockDetailProps> = (props) => {
 export default connect(
   (state: IAppState) => {
     return {
-      sock: state.sock.list as any,
+      socks: state.sock.list,
     };
   },
-  () => ({}),
+  (dispatch) => ({
+    onFetchSocks: () => {
+      dispatch(requestSock());
+      new Promise((resolve) => {
+        setTimeout(() => resolve(), 1000);
+      }).then(() => {
+        dispatch(
+          receiveSock([
+            {
+              id: 'test',
+              colors: [],
+              description: 'Bardzo fajne skarpety',
+              name: 'Skarpety garniturowe',
+              sizes: [{ from: 38, to: 40 }],
+              tags: [],
+              packing: 10,
+              src: m05,
+            },
+          ]),
+        );
+      });
+    },
+  }),
 )(SockDetail);
